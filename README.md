@@ -23,7 +23,6 @@ has_many: tradings
 
 | Column             | type         | Option             |
 |--------------------|--------------|--------------------|
-| image              | ActiveStrong |                    |
 | name               | string       | null : false       |
 | description        | text         | null : false       |
 | price              | integer      | null : false       |
@@ -31,8 +30,8 @@ has_many: tradings
 | state_id           | integer      | null : false       |
 | shipping_charge_id | integer      | null : false       |
 | region_id          | integer      | null : false       |
-| delivery_days_id   | integer      | nill : false       |
-| user               | reference    | foreign_key : true |
+| delivery_days_id   | integer      | null : false       |
+| user               | references   | foreign_key : true |
 
 ### Association
 
@@ -42,27 +41,29 @@ has_one: trading
 
 ## tradingsテーブル
 
-| Column | type      | Option             |
-|--------|-----------|--------------------|
-| user   | reference | foreign_key : true |
-| item   | reference | foreign_key : true |
+| Column | type       | Option                           |
+|--------|------------|----------------------------------|
+| user   | references | null : false, foreign_key : true |
+| item   | references | null : false, foreign_key : true |
 
 ### Association
 
 belongs_to: user
+belongs_to: item
 has_one: destination
 
 
 ## destinationsテーブル（送り先）
 
-| Column         | type    | Option       |
-|----------------|---------|--------------|
-| post_number    | string  | null : false |
-| prefecture_id  | integer | null : false |
-| city           | string  | null : false |
-| street         | string  | null : false |
-| apartment      | string  |              |
-| telephone      | string  | null : false |
+| Column         | type       | Option             |
+|----------------|------------|--------------------|
+| post_number    | string     | null : false       |
+| prefecture_id  | integer    | null : false       |
+| city           | string     | null : false       |
+| street         | string     | null : false       |
+| apartment      | string     |                    |
+| telephone      | string     | null : false       |
+| trading        | references | foreign_key : true |
 
 ### Association
 
