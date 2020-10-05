@@ -21,18 +21,18 @@ has_many: tradings
 
 ## itemsテーブル
 
-| Column          | type         | Option             |
-|-----------------|--------------|--------------------|
-| image           | ActiveStrong |                    |
-| name            | string       | null : false       |
-| description     | text         | null : false       |
-| price           | integer      | null : false       |
-| category        | integer      | null : false       |
-| state           | integer      | null : false       |
-| shipping_charge | integer      | null : false       |
-| region          | integer      | null : false       |
-| delivery_days   | integer      | nill : false       |
-| user            | reference    | foreign_key : true |
+| Column             | type         | Option             |
+|--------------------|--------------|--------------------|
+| image              | ActiveStrong |                    |
+| name               | string       | null : false       |
+| description        | text         | null : false       |
+| price              | integer      | null : false       |
+| category_id        | integer      | null : false       |
+| state_id           | integer      | null : false       |
+| shipping_charge_id | integer      | null : false       |
+| region_id          | integer      | null : false       |
+| delivery_days_id   | integer      | nill : false       |
+| user               | reference    | foreign_key : true |
 
 ### Association
 
@@ -55,17 +55,18 @@ has_one: destination
 
 ## destinationsテーブル（送り先）
 
-| Column      | type    | Option       |
-|-------------|---------|--------------|
-| post_number | integer | null : false |
-| prefecture  | string  | null : false |
-| city        | string  | null : false |
-| street      | string  | null : false |
-| apartment   | string  |              |
-| telephone   | integer | null : false |
+| Column         | type    | Option       |
+|----------------|---------|--------------|
+| post_number    | string  | null : false |
+| prefecture_id  | integer | null : false |
+| city           | string  | null : false |
+| street         | string  | null : false |
+| apartment      | string  |              |
+| telephone      | string  | null : false |
 
 ### Association
 
+belongs_to: trading, dependent: :destroy
 
 
 
