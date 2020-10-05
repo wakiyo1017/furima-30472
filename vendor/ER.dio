@@ -1,4 +1,4 @@
-<mxfile host="5c93f318-9e10-4f44-8c1c-c8d1eb9a35c2" modified="2020-10-05T06:34:54.478Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.49.2 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="zWVUzh6FVJZAUqIVNS3i" version="13.6.5">
+<mxfile host="5c93f318-9e10-4f44-8c1c-c8d1eb9a35c2" modified="2020-10-05T06:51:37.832Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.49.2 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="RnGbD_Jivzbkt-ovLHUo" version="13.6.5">
     <diagram id="6hGFLwfOUW9BJ-s0fimq" name="Page-1">
         <mxGraphModel dx="1101" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -17,16 +17,10 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="6" value="users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="50" width="349" height="180" as="geometry"/>
+                    <mxGeometry x="40" y="50" width="360" height="180" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="nickname               string      null : false&#10;email                      string      null : false&#10;password               string      null : false&#10;first_name_kanji    string      null : false&#10;last_name_kanji    string      null : false&#10;first_name_kana    string      null : false&#10;last_name_kana    string      null : false&#10;birthday                  date        null : false" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="6" vertex="1">
-                    <mxGeometry y="30" width="349" height="150" as="geometry"/>
-                </mxCell>
-                <mxCell id="24" value="tradings（購入）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="510" y="290" width="270" height="120" as="geometry"/>
-                </mxCell>
-                <mxCell id="25" value="user    reference    null : false       foreing_key&#10;item    reference    null : false       foreign_key" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="24">
-                    <mxGeometry y="30" width="270" height="90" as="geometry"/>
+                    <mxGeometry y="30" width="360" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERmany;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="25">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
@@ -35,10 +29,10 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="11" value="destinations（送り先）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="510" y="70" width="270" height="170" as="geometry"/>
+                    <mxGeometry x="480" y="70" width="330" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="post_number   string       null : false&#10;prefecture        integer     null : false&#10;city                   string       null : false&#10;street                string       null : false&#10;apartment         string         &#10;telephone         string       null : false&#10;trading             reference  foreign_key " style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="11" vertex="1">
-                    <mxGeometry y="30" width="270" height="140" as="geometry"/>
+                <mxCell id="12" value="post_number   string       null : false&#10;prefecture        integer     null : false&#10;city                   string       null : false&#10;street                string       null : false&#10;apartment         string         &#10;telephone         string       null : false&#10;trading             reference  null : false     foreign_key " style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="11" vertex="1">
+                    <mxGeometry y="30" width="330" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="29" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="24" target="12">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
@@ -47,10 +41,16 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="17" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="290" width="349" height="210" as="geometry"/>
+                    <mxGeometry x="40" y="290" width="360" height="210" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="image                       ActivStrong&#10;name                        string              null : false&#10;description（説明） text                 null : false&#10;price                         integer            null : false&#10;category&#10;state（状態）&#10;shipping_charges（配送料）&#10;region（地域）&#10;delivery_days（発送日数）&#10;item_id&#10;uer                            reference       foreign_key : true &#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="17" vertex="1">
-                    <mxGeometry y="30" width="349" height="180" as="geometry"/>
+                <mxCell id="18" value="image                       ActivStrong&#10;name                        string           null : false&#10;description（説明） text              null : false&#10;price                         integer         null : false&#10;category&#10;state（状態）&#10;shipping_charges（配送料）&#10;region（地域）&#10;delivery_days（発送日数）&#10;item_id&#10;uer                            reference    null : false    foreign_key : true &#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="17" vertex="1">
+                    <mxGeometry y="30" width="360" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="tradings（購入）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="300" width="270" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="user    reference    null : false       foreing_key&#10;item    reference    null : false       foreign_key" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="24">
+                    <mxGeometry y="30" width="270" height="70" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
