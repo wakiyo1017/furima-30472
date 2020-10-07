@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :category, :state, :region, :shipping_charge, :delivery_days
 
   belongs_to :user
+  has_one_attached :image
 
 
   validates :price, presence: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, format:{ with: /\A[0-9]+z\/, message: 'は半角数字を使用してください' }
