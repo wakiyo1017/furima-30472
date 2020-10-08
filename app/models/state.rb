@@ -1,4 +1,4 @@
-class State < ApplicationRecord
+class State < ActiveHash::Base
   self.data = [
     { id: 1, name: '__' },
     { id: 2, name: '新品・未使用' },

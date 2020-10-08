@@ -1,4 +1,4 @@
-class Region < ApplicationRecord
+class Region < ActiveHash::Base
   self.data = [
     { id: 1, name: '__' },
     { id: 2, name: '北海道' },
