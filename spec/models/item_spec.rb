@@ -65,7 +65,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors[:price]).to include("は半角数字で300円から9,999,999円の間で設定してください")
     end
     it "価格が半角数字以外であると登録できない" do
-      @item.price = "文字列")
+      @item.price = "文字列"
       @item.valid?
       expect(@item.errors[:price]).to include("は半角数字で300円から9,999,999円の間で設定してください")
     end
