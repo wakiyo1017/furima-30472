@@ -10,13 +10,10 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   validates :price, presence: true, numericality: { with: /\A[0-9]+\z/, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: 'は半角数字で300円から9,999,999円の間で設定してください' }
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :category, presence: true #item.category
-  validates :state, presence: true
-  validates :region, presence: true
-  validates :shipping_charge, presence: true
-  validates :delivery_day, presence: true
+  
+  with_options presence: true do
+    validates :name, :description, :category, :state, :region, :shipping_charge, :delivery_day
+  end
   validates :category_id,  numericality: { other_than: 1 , message: 'カテゴリー情報を設定してください'}
   validates :state_id, numericality: { other_than: 1 , message: '商品の状態の情報を設定してください'}
   validates :shipping_charge_id, numericality: { other_than: 1 , message: '配送料負担の情報を設定してください'}
