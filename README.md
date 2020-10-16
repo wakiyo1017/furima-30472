@@ -39,7 +39,7 @@ belongs_to: user
 has_one: trading
 
 
-## tradingsテーブル
+## ordersテーブル
 
 | Column | type       | Option                           |
 |--------|------------|----------------------------------|
@@ -55,19 +55,19 @@ has_one: destination
 
 ## destinationsテーブル（送り先）
 
-| Column         | type       | Option                           |
-|----------------|------------|----------------------------------|
-| post_number    | string     | null : false                     |
-| prefecture_id  | integer    | null : false                     |
-| city           | string     | null : false                     |
-| street         | string     | null : false                     |
-| apartment      | string     |                                  |
-| telephone      | string     | null : false                     |
-| trading        | references | null : false, foreign_key : true |
+| Column      | type       | Option                           |
+|-------------|------------|----------------------------------|
+| post_number | string     | null : false                     |
+| region_id   | integer    | null : false                     |
+| city        | string     | null : false                     |
+| street      | string     | null : false                     |
+| apartment   | string     |                                  |
+| telephone   | string     | null : false                     |
+| order       | references | null : false, foreign_key : true |
 
 ### Association
 
-belongs_to: trading, dependent: :destroy
+belongs_to: order, dependent: :destroy
 
 
 

@@ -124,7 +124,7 @@
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', new_item_path, class: "subtitle" %>
     <ul class='item-lists'>
-      <% if @items[0] != nil %>
+      <% if @items %>
         <% @items.each do |item| %>
         <li class='list'>
         <div class='item-img-content'>
@@ -132,9 +132,13 @@
             <%= image_tag item.image, class: "item-img" if item.image.attached? %>
           <% end %>
           <%# 商品が売れていればsold outを表示しましょう %>
-          <div class='sold-out'>
-            <span>Sold Out!!</span>
-          </div>
+          <% @orders.each do |order| %>
+            <% if item.id == order.item_id %>
+            <div class='sold-out'>
+              <span>Sold Out!!</span>
+            </div>
+            <% end %>
+          <% end %>
           <%# //商品が売れていればsold outを表示しましょう %>
         </div>
         <div class='item-info'>
