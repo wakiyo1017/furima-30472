@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
+  before_action :move_to_index, only: [:index]
 
   def index
     @item = Item.find(params[:item_id])
@@ -14,6 +16,13 @@ class OrdersController < ApplicationController
       redirect_to root_path
     else
       render :index
+    end
+  end
+
+  def move_to_index
+    @item = Item.find(params[:item_id])
+    if (@item.user_id == current_user.id)||@item.order
+      redirect_to root_path
     end
   end
 
