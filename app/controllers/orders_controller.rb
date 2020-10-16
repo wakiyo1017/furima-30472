@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :move_to_top, only: [:index]
   before_action :authenticate_user!, only: [:index]
   before_action :move_to_index, only: [:index]
 
@@ -19,9 +20,16 @@ class OrdersController < ApplicationController
     end
   end
 
+  def move_to_top
+    @item = Item.find(params[:item_id])
+    if @item.order
+      redirect_to root_path
+    end
+  end
+
   def move_to_index
     @item = Item.find(params[:item_id])
-    if (@item.user_id == current_user.id)||@item.order
+    if @item.user_id == current_user.id
       redirect_to root_path
     end
   end
