@@ -8,7 +8,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../changed")
 require("../card")
-
+require("./preview")
 
 
 
