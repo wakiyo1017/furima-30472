@@ -15,10 +15,10 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name, :description, :category, :state, :region, :shipping_charge, :delivery_day
   end
-  validates :category_id,  numericality: { other_than: 1 , message: 'カテゴリー情報を設定してください'}
-  validates :state_id, numericality: { other_than: 1 , message: '商品の状態の情報を設定してください'}
-  validates :shipping_charge_id, numericality: { other_than: 1 , message: '配送料負担の情報を設定してください'}
-  validates :region_id, numericality: { other_than: 1 , message: '発送元の地域の情報を設定してください'}
-  validates :delivery_day_id, numericality: { other_than: 1 , message: '発送までの日数を設定してください'}
+  validates :category_id,  numericality: { other_than: 1 , message: 'を設定してください'}
+  validates :state_id, numericality: { other_than: 1 , message: 'を設定してください'}
+  validates :shipping_charge_id, numericality: { other_than: 1 , message: 'を設定してください'}
+  validates :region_id, numericality: { other_than: 1 , message: 'を設定してください'}
+  validates :delivery_day_id, numericality: { other_than: 1 , message: 'を設定してください'}
   validates :image, presence: true
 end

@@ -6,7 +6,7 @@ class OrderDestination
   with_options presence: true do
     validates :token
     validates :post_number, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'をハイフンを使い正しく入力してください' }
-    validates :region_id, numericality: { other_than: 1 , message: '都道府県を設定してください'}
+    validates :region_id, numericality: { other_than: 1 , message: 'を設定してください'}
     validates :city
     validates :street
     validates :telephone, format:{ with: /\d{10,11}/, message: 'はハイフン不要で、11桁以内で入力してください'}
@@ -18,4 +18,3 @@ class OrderDestination
     Destination.create(post_number: post_number, region_id: region_id, city: city, street: street, apartment: apartment, telephone: telephone, order_id: @order.id)
   end
 end
-""

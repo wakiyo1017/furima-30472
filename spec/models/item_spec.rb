@@ -27,27 +27,27 @@ RSpec.describe Item, type: :model do
     it "カテゴリー情報がない(選択されていない※category_idが1である)と登録できない" do
       @item.category_id = 1
       @item.valid?
-      expect(@item.errors[:category_id]).to include("カテゴリー情報を設定してください")
+      expect(@item.errors[:category_id]).to include("を設定してください")
     end
     it "商品の状態の情報がない(選択されていない※state_idが1である)と登録できない" do
       @item.state_id = 1
       @item.valid?
-      expect(@item.errors[:state_id]).to include("商品の状態の情報を設定してください")
+      expect(@item.errors[:state_id]).to include("を設定してください")
     end
     it "配送料の負担の情報がない(選択されていない※shipping_charge_idが1である)と登録できない" do
       @item.shipping_charge_id = 1
       @item.valid?
-      expect(@item.errors[:shipping_charge_id]).to include("配送料負担の情報を設定してください")
+      expect(@item.errors[:shipping_charge_id]).to include("を設定してください")
     end
     it "発送元の地域の情報がない(選択されていない※region_idが1である)と登録できない" do
       @item.region_id = 1
       @item.valid?
-      expect(@item.errors[:region_id]).to include("発送元の地域の情報を設定してください")
+      expect(@item.errors[:region_id]).to include("を設定してください")
     end
     it "発送までの日数がない(選択されていない※delivery_day_idが1である)と登録できない" do
       @item.delivery_day_id = 1
       @item.valid?
-      expect(@item.errors[:delivery_day_id]).to include("発送までの日数を設定してください")
+      expect(@item.errors[:delivery_day_id]).to include("を設定してください")
     end
     it "価格についての情報がないと登録できない" do
       @item.price = nil

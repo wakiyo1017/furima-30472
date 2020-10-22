@@ -33,12 +33,12 @@ RSpec.describe OrderDestination, type: :model do
     it "都道府県がなければ購入処理ができない" do
       @order.region_id = nil
       @order.valid?
-      expect(@order.errors.full_messages).to include("Region can't be blank", "Region 都道府県を設定してください")
+      expect(@order.errors.full_messages).to include("Region can't be blank", "Region を設定してください")
     end
     it "都道府県が正しく選択(category_idが1以外)でなければ購入処理ができない" do
       @order.region_id = 1
       @order.valid?
-      expect(@order.errors.full_messages).to include("Region 都道府県を設定してください")
+      expect(@order.errors.full_messages).to include("Region を設定してください")
     end
     it "市区町村が入力されていなければ購入処理ができない" do
       @order.city = nil
